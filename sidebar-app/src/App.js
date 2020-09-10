@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useState, } from 'react'
 import {
   Checkbox,
   Grid,
@@ -12,8 +12,8 @@ import {
 import 'semantic-ui-css/semantic.min.css'
 
 const SidebarExampleTarget = () => {
-  const segmentRef = React.useRef()
-  const [visible, setVisible] = React.useState(false)
+  const segmentRef = useRef()
+  const [visible, setVisible] = useState(false)
 
   return (
     <Grid columns={1}>
@@ -30,6 +30,7 @@ const SidebarExampleTarget = () => {
           <Sidebar
             as={Menu}
             animation='overlay'
+            direction="right"
             icon='labeled'
             inverted
             onHide={() => setVisible(false)}
@@ -44,10 +45,7 @@ const SidebarExampleTarget = () => {
           </Sidebar>
 
           <Ref innerRef={segmentRef}>
-            <Segment secondary>
-              <Header as='h3'>Clickable area</Header>
-              <p>When you will click there, the sidebar will be closed.</p>
-            </Segment>
+            <button>BRUUUUUUUUUUUUUUUUUUUH</button>
           </Ref>
 
           <Segment>
