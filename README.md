@@ -5,7 +5,7 @@
 ### Things learned:
 ##### The Lambda Labs project needs a simple popup-like sidebar panel that will display certain map data when asked to.
 ##### Multiple NPM's were looked at, but the Semantic-UI-React NPM looked the best for this occasion.
-##### Steps to recreate:
+#### Steps to recreate:
 
 #### In console:
 `
