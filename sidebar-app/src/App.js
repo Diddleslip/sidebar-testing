@@ -1,12 +1,63 @@
-import React from 'react';
-import './App.css';
+import React from 'react'
+import {
+  Checkbox,
+  Grid,
+  Header,
+  Image,
+  Menu,
+  Ref,
+  Segment,
+  Sidebar,
+} from 'semantic-ui-react'
+import 'semantic-ui-css/semantic.min.css'
 
-function App() {
+const SidebarExampleTarget = () => {
+  const segmentRef = React.useRef()
+  const [visible, setVisible] = React.useState(false)
+
   return (
-    <div className="App">
-      <h1>Hello world!</h1>
-    </div>
-  );
+    <Grid columns={1}>
+      <Grid.Column>
+        <Checkbox
+          checked={visible}
+          label={{ children: <code>visible</code> }}
+          onChange={(e, data) => setVisible(data.checked)}
+        />
+      </Grid.Column>
+
+      <Grid.Column>
+        <Sidebar.Pushable as={Segment.Group} raised>
+          <Sidebar
+            as={Menu}
+            animation='overlay'
+            icon='labeled'
+            inverted
+            onHide={() => setVisible(false)}
+            vertical
+            target={segmentRef}
+            visible={visible}
+            width='thin'
+          >
+            <Menu.Item as='a'>Home</Menu.Item>
+            <Menu.Item as='a'>Games</Menu.Item>
+            <Menu.Item as='a'>Channels</Menu.Item>
+          </Sidebar>
+
+          <Ref innerRef={segmentRef}>
+            <Segment secondary>
+              <Header as='h3'>Clickable area</Header>
+              <p>When you will click there, the sidebar will be closed.</p>
+            </Segment>
+          </Ref>
+
+          <Segment>
+            <Header as='h3'>Application Content</Header>
+            <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
+          </Segment>
+        </Sidebar.Pushable>
+      </Grid.Column>
+    </Grid>
+  )
 }
 
-export default App;
+export default SidebarExampleTarget
