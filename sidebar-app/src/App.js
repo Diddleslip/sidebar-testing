@@ -13,6 +13,7 @@ import ReactMapGL, {Marker, Popup} from "react-map-gl";
 import * as parkData from "./Skateboard_Parks.json";
 import 'semantic-ui-css/semantic.min.css'
 
+// This token allows for the Map API to connect with our front end map UI
 const REACT_APP_MAPBOX_TOKEN="pk.eyJ1IjoibGFtYmRhbGFiczI1ZWNvc29hcCIsImEiOiJja2VhZWRhOG4wNmU5MnNxZXQ0bmhxZnU3In0.zWyuwunBSy51dulZG9gowQ"
 
 
